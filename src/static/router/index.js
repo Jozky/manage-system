@@ -9,13 +9,20 @@ export default new Router({
             path: '/',
             redirect: '/login'
         },
+
         {
-            path: '/readme',
-            component: resolve => require(['../components/common/Home.vue'], resolve),
-            children:[
+            path: '/apis',
+            component: resolve => require(['../components/common/Home.vue'], resolve)
+            ,
+
+            children: [
                 {
                     path: '/',
-                    component: resolve => require(['../components/page/Readme.vue'], resolve)
+                    component: resolve => require(['../components/page/Api.vue'], resolve)
+                },
+                {
+                    path: '/api-add',
+                    component: resolve => require(['../components/page/Api-add.vue'], resolve)
                 },
                 {
                     path: '/basetable',
@@ -55,5 +62,18 @@ export default new Router({
             path: '/login',
             component: resolve => require(['../components/page/Login.vue'], resolve)
         },
+        // {
+        //     path: '/readme2',
+        //     component: resolve => require(['../components/common/Home.vue'], resolve)
+        //     ,
+        //
+        //     children: [
+        //         {
+        //             path: '/',
+        //             component: resolve => require(['../components/page/Readme.vue'], resolve)    // vue-echarts-v3组件
+        //         }
+        //     ]
+        // },
+
     ]
 })
